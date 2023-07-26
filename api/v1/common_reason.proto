@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package load_book.v1;
+
+option go_package = "load_book/api/v1;v1";
+
+message Page {
+  int32 limit = 1;
+  int32 offset = 2;
+}

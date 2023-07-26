@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package load_book.v1;
+
+import "google/api/annotations.proto";
+
+option go_package = "load_book/api/v1;v1";
+
+service Health {
+  rpc Get (GetRequest) returns (GetReply) {
+    option (google.api.http) = {
+      get: "/health"
+    };
+  }
+}
+
+// The request message containing the user's name.
+message GetRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message GetReply {
+  string status = 1;
+}

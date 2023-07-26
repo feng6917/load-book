@@ -1,0 +1,95 @@
+syntax = "proto3";
+
+package load_book.v1;
+
+import "google/api/annotations.proto";
+import "api/v1/common_reason.proto";
+import "google/protobuf/timestamp.proto";
+
+option go_package = "load_book/api/v1;v1";
+
+service Category {
+  rpc Get (CategoryGetRequest) returns (CategoryGetReply) {
+    option (google.api.http) = {
+      get: "/category/get-by-id"
+    };
+  }
+  rpc List (CategoryListRequest) returns (CategoryListReply) {
+    option (google.api.http) = {
+      get: "/category"
+    };
+  }
+  rpc Update (CategoryUpdateRequest) returns (CategoryUpdateReply) {
+    option (google.api.http) = {
+      put: "/category",
+      body: "*"
+    };
+  }
+  rpc Delete (CategoryDeleteRequest) returns (CategoryDeleteReply) {
+    option (google.api.http) = {
+      delete: "/category"
+    };
+  }
+  rpc Create (CategoryCreateRequest) returns (CategoryCreateReply) {
+    option (google.api.http) = {
+      post: "/category",
+      body: "*"
+    };
+  }
+}
+
+message category {
+  int32 id = 1;
+  string name = 2;
+  string desc = 3;
+  google.protobuf.Timestamp createAt = 4;
+  google.protobuf.Timestamp updateAt = 5;
+}
+
+// The request message containing the user's name.
+message CategoryGetRequest {
+  int32 id = 1;
+}
+
+// The response message containing the greetings
+message CategoryGetReply {
+  category item = 1;
+}
+
+
+message CategoryCreateRequest {
+  // 名称.
+  string name = 1;
+  // 描述信息.
+  string desc = 2;
+}
+
+message CategoryCreateReply{
+  int32 id = 1;
+}
+
+message CategoryDeleteRequest{
+  int32 id = 1;
+}
+
+message CategoryDeleteReply{}
+
+message CategoryUpdateRequest{
+  int32 id = 1;
+  string name = 2;
+  string desc = 3;
+}
+
+message CategoryUpdateReply{}
+
+message CategoryListRequest{
+  // 名称（模糊查询）.
+  string name = 1;
+  Page page = 2;
+}
+
+message CategoryListReply{
+  repeated category items = 1;
+}
+
+
