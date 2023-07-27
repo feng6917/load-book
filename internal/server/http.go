@@ -20,9 +20,9 @@ func NewHTTPServer(bc *conf.Bootstrap, pbServer *PbServer, logger log.Logger) *h
 	if bc.Server.Http.Addr != "" {
 		opts = append(opts, http.Address(bc.Server.Http.Addr))
 	}
-	if bc.Server.Http.Timeout != nil {
-		opts = append(opts, http.Timeout(bc.Server.Http.Timeout.AsDuration()))
-	}
+	// if bc.Server.Http.Timeout != nil {
+	// 	opts = append(opts, http.Timeout(bc.Server.Http.Timeout.AsDuration()))
+	// }
 	srv := http.NewServer(opts...)
 	pbServer.RegisterHTTP(srv)
 	return srv

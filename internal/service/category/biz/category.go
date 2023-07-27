@@ -2,7 +2,7 @@ package biz
 
 import (
 	"context"
-	v1 "load-book/api/load-book/v1"
+	v1 "load-book/api/v1"
 	"load-book/internal/model/category"
 
 	"github.com/go-kratos/kratos/v2/errors"

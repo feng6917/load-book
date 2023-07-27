@@ -14,6 +14,7 @@ init:
 	go install github.com/google/gnostic/cmd/protoc-gen-openapi@latest
 	go install github.com/google/wire/cmd/wire@latest
 	go install github.com/grpc-ecosystem/grpc-gateway/v2/protoc-gen-openapiv2@v2.5.0
+	go install github.com/envoyproxy/protoc-gen-validate@latest
 
 .PHONY: grpc
 # generate grpc code

@@ -1,7 +1,7 @@
 package server
 
 import (
-	v1 "load-book/api/load-book/v1"
+	v1 "load-book/api/v1"
 
 	"github.com/go-kratos/kratos/v2/transport/grpc"
 	"github.com/go-kratos/kratos/v2/transport/http"

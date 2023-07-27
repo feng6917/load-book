@@ -6,7 +6,7 @@ import (
 	"load-book/internal/model/category"
 	"load-book/internal/utils"
 
-	v1 "load-book/api/load-book/v1"
+	v1 "load-book/api/v1"
 	"load-book/internal/service/category/biz"
 )
 

@@ -1,7 +1,7 @@
 package biz
 
 import (
-	v1 "load-book/api/load-book/v1"
+	v1 "load-book/api/v1"
 	"load-book/internal/model/health"
 
 	"github.com/go-kratos/kratos/v2/errors"

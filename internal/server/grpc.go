@@ -21,9 +21,9 @@ func NewGRPCServer(bc *conf.Bootstrap, pbServer *PbServer, logger log.Logger) *g
 	if bc.Server.Grpc.Addr != "" {
 		opts = append(opts, grpc.Address(bc.Server.Grpc.Addr))
 	}
-	if bc.Server.Grpc.Timeout != nil {
-		opts = append(opts, grpc.Timeout(bc.Server.Grpc.Timeout.AsDuration()))
-	}
+	// if bc.Server.Grpc.Timeout != nil {
+	// opts = append(opts, grpc.Timeout(bc.Server.Grpc.Timeout.AsDuration()))
+	// }
 	srv := grpc.NewServer(opts...)
 	pbServer.RegisterGRPC(srv)
 	return srv

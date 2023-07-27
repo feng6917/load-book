@@ -1,18 +1,18 @@
 server:
   http:
     addr: 0.0.0.0:8000
-    timeout: 1s
+    timeout: 1
   grpc:
     addr: 0.0.0.0:9000
-    timeout: 1s
+    timeout: 1
   postgres:
-    addr: "127.0.0.1:5432"
+    addr: "123.249.70.215:5432"
     user: "postgres"
     pwd: "123456"
-    db: "qqyyds"
+    db: "postgres"
     schema: "public"
 
   redis:
-    addr: 127.0.0.1:6379
-    read_timeout: 0.2s
-    write_timeout: 0.2s
+    addr: 123.249.70.215:6379
+    read_timeout: 1
+    write_timeout: 1
